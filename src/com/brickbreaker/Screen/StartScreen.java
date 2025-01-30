@@ -46,7 +46,7 @@ public class StartScreen extends Screen {
                 rect = highLightBoxes[1];
                 g.drawImage(startImage, (int) rect.x, (int) rect.y, (int) rect.width, (int) rect.height, null);
                 rect = highLightBoxes[2];
-                g.drawImage(resumetImage, (int) rect.x, (int) rect.y, (int) rect.width, (int) rect.height, null);
+                //g.drawImage(resumetImage, (int) rect.x, (int) rect.y, (int) rect.width, (int) rect.height, null);
                 rect = highLightBoxes[3];
                 g.drawImage(quittImage, (int) rect.x, (int) rect.y, (int) rect.width, (int) rect.height, null);
             }
@@ -66,12 +66,15 @@ public class StartScreen extends Screen {
                 if (e.getKeyCode() == KeyEvent.VK_P) {
                     selectedButton = 1;
                 } else if (e.getKeyCode() == KeyEvent.VK_R) {
-                    if (((BrickBreakerScreen) main.getScreens()[2]).hasBeenSeen) {
+                    Screen screen = main.getScreens()[2];
+                    if (screen instanceof BrickBreakerScreen && ((BrickBreakerScreen) screen).hasBeenSeen) {
                         selectedButton = 2;
                     }
                 } else if (e.getKeyCode() == KeyEvent.VK_Q) {
                     selectedButton = 3;
-                } else if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                }
+
+                //else if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                     switch (selectedButton) {
                         case 1:
                             selectedButton = -1;
@@ -93,7 +96,7 @@ public class StartScreen extends Screen {
                             break;
                     }
                 }
-            }
+           // }
         });
     }
 
@@ -116,10 +119,10 @@ public class StartScreen extends Screen {
             g.fillRoundRect((int) rect.x, (int) rect.y, (int) rect.width, (int) rect.height, 16, 16);
         }
         super.paint(g);
-        if (((BrickBreakerScreen) main.getScreens()[1]).hasBeenSeen) {
-            g.setColor(new Color(0, 0, 0, highlighterAlpha + 100));
-            Rect rect = highLightBoxes[2];
-            g.fillRoundRect((int) rect.x, (int) rect.y, (int) rect.width, (int) rect.height, 16, 16);
-        }
+//        if (((BrickBreakerScreen) main.getScreens()[1]).hasBeenSeen) {
+//            g.setColor(new Color(0, 0, 0, highlighterAlpha + 100));
+//            Rect rect = highLightBoxes[2];
+//            g.fillRoundRect((int) rect.x, (int) rect.y, (int) rect.width, (int) rect.height, 16, 16);
+//        }
     }
 }

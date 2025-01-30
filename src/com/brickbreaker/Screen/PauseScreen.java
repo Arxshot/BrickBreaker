@@ -69,7 +69,7 @@ public class PauseScreen extends Screen {
             @Override
             public void keyReleased(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_P) { // pause key
-                    if (puaseButtonWasLifted) {
+                    if (!puaseButtonWasLifted) {
                         puaseButtonWasLifted = true;
                     } else {
                         puaseButtonWasLifted = false;
@@ -79,7 +79,7 @@ public class PauseScreen extends Screen {
                     selectedbutton = 0;
                 } else if (e.getKeyCode() == KeyEvent.VK_Q) {
                     selectedbutton = 1;
-                } else if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                } //else if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                     switch (selectedbutton) {
                         case 0:
                             selectedbutton = -1;
@@ -87,13 +87,14 @@ public class PauseScreen extends Screen {
                             unPause();
                             break;
                         case 1:
+                            puaseButtonWasLifted = false;
                             selectedbutton = -1;
                             main.getScreen().deactivate();
                             main.changeScreen(StartScreen.class);
                             main.getScreen().activate();
                     }
                 }
-            }
+           // }
         });
     }
 

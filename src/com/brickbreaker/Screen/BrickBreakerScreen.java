@@ -193,7 +193,7 @@ public class BrickBreakerScreen extends Screen {
         // Handle the power ups by checking still in play, and removing if no longer in play.
         for (int i = 0; i < powerUps.size(); i++) {
             Vec pos = powerUps.get(i).getRay().getLine().getP1();
-            if (playingBoard.contains(pos.getX(), pos.getY())) { // If power up is no longer in game play
+            if (!playingBoard.contains(pos.getX(), pos.getY())) { // If power up is no longer in game play
                 paintables.remove(powerUps.get(i)); // no longer paintable
                 updatables.remove(powerUps.get(i)); // no longer updatable
                 movingColliders.remove(powerUps.get(i)); // no longer collidable
