@@ -30,8 +30,8 @@ public class PauseScreen extends Screen {
         this.paintables = new Vector();
         this.updatables = new Vector();
         try {
-            resumeImage = ImageIO.read(new File("Sprites/Resume.png"));
-            quitImage = ImageIO.read(new File("Sprites/Quit.png"));
+            resumeImage = ImageIO.read(new File("Sprites/r_resume.png"));
+            quitImage = ImageIO.read(new File("Sprites/q_quit.png"));
         } catch (Exception e) {
             resumeImage = null;
             quitImage = null;

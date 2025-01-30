@@ -30,7 +30,7 @@ public class GameOverScreen extends Screen {
         this.paintables = new Vector();
         this.updatables = new Vector();
         try {
-            quitImage = ImageIO.read(new File("Sprites/Quit.png"));
+            quitImage = ImageIO.read(new File("Sprites/q_quit.png"));
         } catch (Exception e) {
             quitImage = null;
         }

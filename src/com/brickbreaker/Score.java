@@ -20,11 +20,12 @@ public class Score implements Paintable {
         this.rect = rect;
         numberImages = new BufferedImage[10];
         try {
-            scoreImage = ImageIO.read(new File("Sprites/Score.png"));
+            scoreImage = ImageIO.read(new File("Sprites/score.png"));
             for (int i = 0; i <= 9; i++) {
                 numberImages[i] = ImageIO.read(new File("Sprites/" + i + ".png"));
             }
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

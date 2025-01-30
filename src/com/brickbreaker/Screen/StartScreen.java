@@ -29,10 +29,10 @@ public class StartScreen extends Screen {
         this.paintables = new Vector();
         this.updatables = new Vector();
         try {
-            brickBreackerImage = ImageIO.read(new File("Sprites/BrickBreaker.png"));
-            startImage = ImageIO.read(new File("Sprites/Play.png"));
-            resumetImage = ImageIO.read(new File("Sprites/Resume.png"));
-            quittImage = ImageIO.read(new File("Sprites/Quit.png"));
+            brickBreackerImage = ImageIO.read(new File("Sprites/brick_breaker.png"));
+            startImage = ImageIO.read(new File("Sprites/p_play.png"));
+            resumetImage = ImageIO.read(new File("Sprites/r_resume.png"));
+            quittImage = ImageIO.read(new File("Sprites/q_quit.png"));
         } catch (Exception e) {
             startImage = null;
         }

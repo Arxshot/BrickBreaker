@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Use ImageMagic to recreate the png assets
+# brew install imagemagick
+
+convert -background none -fill white -font Arial -pointsize 48 label:"Brick Breaker" brick_breaker.png
+convert -background none -fill white -font Arial -pointsize 48 label:"[P] Play" p_play.png
+convert -background none -fill white -font Arial -pointsize 48 label:"[R] Resume" r_resume.png
+convert -background none -fill white -font Arial -pointsize 48 label:"[Q] Quit" q_quit.png
+
+convert -background none -fill white -font Arial -pointsize 48 label:"Score" score.png
+
+for i in {0..9}; do 
+    convert -background none -fill white -font Arial -pointsize 48 label:"$i" "$i.png"; 
+done
